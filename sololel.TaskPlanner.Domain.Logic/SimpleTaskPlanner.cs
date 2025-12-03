@@ -1,13 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using solelel.TaskPlanner.Domain.Models;    
+﻿using solelel.TaskPlanner.DataAccess.Abstractions;
+using solelel.TaskPlanner.Domain.Models;
 
 namespace solelel.TaskPlanner.Domain.Logic
 {
     public class SimpleTaskPlanner
     {
-        public WorkItem[] CreatePlan(WorkItem[] items)
+        private readonly IWorkItemsRepository _repository;
+
+        public SimpleTaskPlanner(IWorkItemsRepository repository)
         {
+            _repository = repository;
+        }
+
+        public WorkItem[] CreatePlan()
+        {
+            var items = _repository.GetAll().Where(i => !i.IsCompleted).ToArray();  
             var itemsAsList = items.ToList();
             itemsAsList.Sort(CompareWorkItems);
             return itemsAsList.ToArray();
@@ -15,17 +22,17 @@ namespace solelel.TaskPlanner.Domain.Logic
 
         private static int CompareWorkItems(WorkItem firstItem, WorkItem secondItem)
         {
-            // Спочатку порівнюємо Priority за спаданням (вищий пріоритет - раніше)
+            
             int priorityComparison = secondItem.Priority.CompareTo(firstItem.Priority);
             if (priorityComparison != 0)
                 return priorityComparison;
 
-            // Якщо пріоритети рівні, порівнюємо DueDate за зростанням (раніше - раніше)
+            
             int dueDateComparison = firstItem.DueDate.CompareTo(secondItem.DueDate);
             if (dueDateComparison != 0)
                 return dueDateComparison;
 
-            // Якщо дати рівні, порівнюємо Title в алфавітному порядку (зростання)
+          
             return firstItem.Title.CompareTo(secondItem.Title);
         }
     }

@@ -1,10 +1,11 @@
 ﻿using System;
-using solelel.TaskPlanner.Domain.Models.Enums; 
+using solelel.TaskPlanner.Domain.Models.Enums;
 
 namespace solelel.TaskPlanner.Domain.Models
 {
     public class WorkItem
     {
+        public Guid Id { get; set; }  
         public DateTime CreationDate { get; set; }
         public DateTime DueDate { get; set; }
         public Priority Priority { get; set; }
@@ -16,6 +17,21 @@ namespace solelel.TaskPlanner.Domain.Models
         public override string ToString()
         {
             return $"{Title}: due {DueDate:dd.MM.yyyy}, {Priority.ToString().ToLower()} priority";
+        }
+
+        public WorkItem Clone()
+        {
+            return new WorkItem
+            {
+                Id = this.Id,
+                CreationDate = this.CreationDate,
+                DueDate = this.DueDate,
+                Priority = this.Priority,
+                Complexity = this.Complexity,
+                Title = this.Title,
+                Description = this.Description,
+                IsCompleted = this.IsCompleted
+            };
         }
     }
 }

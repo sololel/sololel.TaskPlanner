@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\sololel.TaskPlanner.DataAccess.Abstractions\sololel.TaskPlanner.DataAccess.Abstractions.csproj" />
     <ProjectReference Include="..\sololel.TaskPlanner.Domain.Models\sololel.TaskPlanner.Domain.Models.csproj" />
   </ItemGroup>
 

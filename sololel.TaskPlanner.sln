@@ -4,10 +4,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner", "sololel.TaskPlanner\sololel.TaskPlanner.csproj", "{45CCDB0A-C9B9-4612-BF6C-044646772D35}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E} = {BCE68D81-1E37-414D-9A9A-B48E77205A5E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner.Domain.Models", "sololel.TaskPlanner.Domain.Models\sololel.TaskPlanner.Domain.Models.csproj", "{BC332391-7353-4A16-8E1F-C44027ABA88A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner.Domain.Logic", "sololel.TaskPlanner.Domain.Logic\sololel.TaskPlanner.Domain.Logic.csproj", "{E9324186-18AE-439B-AB8B-144BF72E248D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner.DataAccess", "sololel.TaskPlanner.DataAccess\sololel.TaskPlanner.DataAccess.csproj", "{980AF7E5-9133-47D5-A29E-7D55D5099AE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner.DataAccess.Abstractions", "sololel.TaskPlanner.DataAccess.Abstractions\sololel.TaskPlanner.DataAccess.Abstractions.csproj", "{583ACA04-C6A3-4EF3-BB8B-EC04456F3856}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{CEEB79E6-7615-4397-A59A-5FBA0FC91B84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3E2C40A0-00E6-4BAF-9956-C1A74FF7E626}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sololel.TaskPlanner.Domain.Logic.Tests", "sololel.TaskPlanner.Domain.Logic.Tests\sololel.TaskPlanner.Domain.Logic.Tests.csproj", "{BCE68D81-1E37-414D-9A9A-B48E77205A5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +42,29 @@ Global
 		{E9324186-18AE-439B-AB8B-144BF72E248D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9324186-18AE-439B-AB8B-144BF72E248D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9324186-18AE-439B-AB8B-144BF72E248D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{980AF7E5-9133-47D5-A29E-7D55D5099AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980AF7E5-9133-47D5-A29E-7D55D5099AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{980AF7E5-9133-47D5-A29E-7D55D5099AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980AF7E5-9133-47D5-A29E-7D55D5099AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583ACA04-C6A3-4EF3-BB8B-EC04456F3856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583ACA04-C6A3-4EF3-BB8B-EC04456F3856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583ACA04-C6A3-4EF3-BB8B-EC04456F3856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583ACA04-C6A3-4EF3-BB8B-EC04456F3856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45CCDB0A-C9B9-4612-BF6C-044646772D35} = {3E2C40A0-00E6-4BAF-9956-C1A74FF7E626}
+		{BC332391-7353-4A16-8E1F-C44027ABA88A} = {CEEB79E6-7615-4397-A59A-5FBA0FC91B84}
+		{E9324186-18AE-439B-AB8B-144BF72E248D} = {CEEB79E6-7615-4397-A59A-5FBA0FC91B84}
+		{980AF7E5-9133-47D5-A29E-7D55D5099AE0} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{583ACA04-C6A3-4EF3-BB8B-EC04456F3856} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{BCE68D81-1E37-414D-9A9A-B48E77205A5E} = {CEEB79E6-7615-4397-A59A-5FBA0FC91B84}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02D0C722-AB03-476D-93FF-FCF6D1E96A48}
